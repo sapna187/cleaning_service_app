@@ -39,6 +39,7 @@ class BookingDetailView extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
+        surfaceTintColor: Colors.transparent,
         backgroundColor: AppColors.white,
         elevation: 0,
         title: customText(

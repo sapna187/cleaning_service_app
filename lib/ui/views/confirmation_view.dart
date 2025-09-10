@@ -26,6 +26,7 @@ class ConfirmationView extends StatelessWidget {
       backgroundColor: AppColors.white,
       appBar: AppBar(
         backgroundColor: AppColors.white,
+        surfaceTintColor: Colors.transparent,
         elevation: 0,
         title: customText(
           'Booking Confirmation',

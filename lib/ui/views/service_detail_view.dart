@@ -1,4 +1,3 @@
-
 import 'package:cleaning_service_selector/ui/components/booking_info.dart';
 import 'package:cleaning_service_selector/ui/components/custom_button.dart';
 import 'package:cleaning_service_selector/ui/utils/app_colors.dart';
@@ -22,6 +21,7 @@ class ServiceDetailView extends StatelessWidget {
       backgroundColor: AppColors.white,
       appBar: AppBar(
         backgroundColor: AppColors.white,
+        surfaceTintColor: Colors.transparent,
         elevation: 0,
         title: customText(
           'Service Details',
@@ -64,7 +64,6 @@ class ServiceDetailView extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-               
                   SizedBox(
                     height: AppSizes.size200,
                     child: ClipRRect(

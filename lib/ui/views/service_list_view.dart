@@ -70,7 +70,7 @@ class ServiceListView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   customText(
-                    'Select a cleaning service',
+                    'Select cleaning services',
                     size: AppSizes.fontLarge,
                     weight: FontWeight.w600,
                     color: AppColors.black,
