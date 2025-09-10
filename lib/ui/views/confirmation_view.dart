@@ -243,7 +243,10 @@ class ConfirmationView extends StatelessWidget {
               ),
 
               Padding(
-                padding: EdgeInsets.only(bottom: AppSizes.paddingMedium),
+                padding: EdgeInsets.only(
+                  bottom: AppSizes.paddingMedium,
+                  top: AppSizes.paddingMedium,
+                ),
                 child: ContinueButton(
                   isVisible: true,
                   title: "Confirm Booking",

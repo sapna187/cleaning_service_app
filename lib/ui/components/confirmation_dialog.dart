@@ -72,7 +72,7 @@ class BookingConfirmationDialog extends StatelessWidget {
                       onReturn ??
                       () {
                         ctrl.selectedIds.clear();
-                        ctrl.selectedService.value = null;
+                        ctrl.selectedIds.value = [];
                         Get.offAll(() => const ServiceListView());
                       },
                   child: customText(

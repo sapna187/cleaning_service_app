@@ -75,7 +75,7 @@ class BookingDetailView extends StatelessWidget {
             AppSizes.vSpaceM,
 
             customText(
-              "Service selected:",
+              "Services selected:",
               size: AppSizes.fontLarge,
               weight: FontWeight.w700,
               color: AppColors.black,

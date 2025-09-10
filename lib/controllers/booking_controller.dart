@@ -1,4 +1,3 @@
-import 'package:cleaning_service_selector/model/service_model.dart';
 import 'package:cleaning_service_selector/model/services_data.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,6 +14,7 @@ class BookingController extends GetxController {
 
   static const double platformFeeRate = 0.10;
   static const double crewShareRate = 0.78;
+
   @override
   void onInit() {
     super.onInit();
@@ -38,9 +38,7 @@ class BookingController extends GetxController {
       .fold(0.0, (a, b) => a + b);
 
   double get platformFee => subtotal * platformFeeRate;
-
   double get total => subtotal + platformFee;
-
   double get crewReceives => subtotal * crewShareRate;
 
   String durationFor(String id) {
@@ -56,8 +54,7 @@ class BookingController extends GetxController {
 
     final booking = {
       'id': DateTime.now().millisecondsSinceEpoch.toString(),
-      'date':
-          selectedDate.value?.toIso8601String() ??
+      'date': selectedDate.value?.toIso8601String() ??
           DateTime.now().toIso8601String(),
       'time': selectedTime.value != null
           ? '${selectedTime.value!.hour}:${selectedTime.value!.minute}'
@@ -75,15 +72,5 @@ class BookingController extends GetxController {
     selectedIds.clear();
     selectedDate.value = null;
     selectedTime.value = null;
-  }
-
-  final selectedService = Rx<ServiceModel?>(null);
-
-  void selectService(ServiceModel service) {
-    if (selectedService.value?.id == service.id) {
-      selectedService.value = null;
-    } else {
-      selectedService.value = service;
-    }
   }
 }

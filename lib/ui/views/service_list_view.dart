@@ -58,8 +58,8 @@ class ServiceListView extends StatelessWidget {
       ),
 
       body: Obx(() {
-        final services = ctrl.services;
-        final selected = ctrl.selectedService.value;
+         final services = ctrl.services;
+  final selected = ctrl.selectedIds;
 
         return Stack(
           children: [
@@ -91,8 +91,14 @@ class ServiceListView extends StatelessWidget {
                       final service = services[i];
                       return ServiceTile(
                         service: service,
-                        isSelected: selected?.id == service.id,
-                        onTap: () => ctrl.selectService(service),
+                        isSelected: selected.contains(service.id),
+                        onTap: () {
+                          if (selected.contains(service.id)) {
+                            selected.remove(service.id);
+                          } else {
+                            selected.add(service.id);
+                          }
+                        },
                       );
                     },
                   ),
@@ -107,7 +113,7 @@ class ServiceListView extends StatelessWidget {
               bottom: AppSizes.paddingLarge,
               right: AppSizes.paddingMedium,
               child: ContinueButton(
-                isVisible: selected != null,
+                isVisible: selected.isNotEmpty,
                 onPressed: () {
                   Get.to(
                     () => const ServiceDetailView(),
